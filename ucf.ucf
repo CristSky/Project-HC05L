@@ -1,0 +1,33 @@
+NET "clk"	LOC = "V10" | IOSTANDARD = "LVCMOS33";
+
+# Leds
+NET "Led<0>"	LOC = "U16" | IOSTANDARD = "LVCMOS33";
+NET "Led<1>"	LOC = "V16" | IOSTANDARD = "LVCMOS33";
+NET "Led<2>"	LOC = "U15" | IOSTANDARD = "LVCMOS33";
+NET "Led<3>"	LOC = "V15" | IOSTANDARD = "LVCMOS33";
+NET "Led<4>"	LOC = "M11" | IOSTANDARD = "LVCMOS33";
+NET "Led<5>"	LOC = "N11" | IOSTANDARD = "LVCMOS33";
+NET "Led<6>"	LOC = "R11" | IOSTANDARD = "LVCMOS33";
+NET "Led<7>"	LOC = "T11" | IOSTANDARD = "LVCMOS33";
+
+# Switches
+NET "rst"	LOC = "T10" | IOSTANDARD = "LVCMOS33";
+NET "sw<0>"	LOC = "T9"  | IOSTANDARD = "LVCMOS33";
+NET "sw<1>"	LOC = "V9"  | IOSTANDARD = "LVCMOS33";
+NET "sw<2>"	LOC = "M8"  | IOSTANDARD = "LVCMOS33";
+NET "sw<3>"	LOC = "N8"  | IOSTANDARD = "LVCMOS33";
+NET "sw<4>"	LOC = "U8"  | IOSTANDARD = "LVCMOS33";
+NET "sw<5>"	LOC = "V8"  | IOSTANDARD = "LVCMOS33";
+NET "sw_e"	LOC = "T5"  | IOSTANDARD = "LVCMOS33";
+
+##JA
+NET "lcd_db<4>"		LOC = "T12" | IOSTANDARD = "LVCMOS33";
+NET "lcd_db<5>"		LOC = "V12" | IOSTANDARD = "LVCMOS33";
+NET "lcd_db<6>"		LOC = "N10" | IOSTANDARD = "LVCMOS33";
+NET "lcd_db<7>"		LOC = "P11" | IOSTANDARD = "LVCMOS33";
+
+##JB
+NET "lcd_rw"          LOC = "K2"  | IOSTANDARD = "LVCMOS33";
+NET "lcd_rs"          LOC = "K1"  | IOSTANDARD = "LVCMOS33";
+
+NET "lcd_e"          LOC = "L3"  | IOSTANDARD = "LVCMOS33";
