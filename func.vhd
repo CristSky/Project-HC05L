@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Laboratório de Arquitetura de Computadores
--- Prof. Dr. Fábio Dacêncio Pereira
+-- LaboratÃ³rio de Arquitetura de Computadores
+-- Prof. Dr. FÃ¡bio DacÃªncio Pereira
 --
 -- Projeto Final P.O.
 --
--- César Torralvo Alves	RA - 533122
--- Cristiano Vicente		RA - 443913
+-- CÃ©sar Torralvo Alves
+-- Cristiano Vicente
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -17,7 +17,7 @@ package func is
 function Hexcod(n: STD_LOGIC_VECTOR (3 downto 0)) return STD_LOGIC_VECTOR;
 
 
---Instruçoes----------------------------------------------------------------------
+--InstruÃ§oes----------------------------------------------------------------------
 constant INC_A	: STD_LOGIC_VECTOR (7 downto 0):="01001100"; -- 4C (INC) -> A
 constant DEC_A	: STD_LOGIC_VECTOR (7 downto 0):="01001101"; -- 4D (DEC) -> A
 constant ADD_A	: STD_LOGIC_VECTOR (7 downto 0):="10101011"; -- AB (ADD) -> A
@@ -33,7 +33,7 @@ constant JMP	: STD_LOGIC_VECTOR (7 downto 0):="10111000"; -- B8 (JUMP) -> B
 constant JZ		: STD_LOGIC_VECTOR (7 downto 0):="10111001"; -- B9 (JUMP se 0) -> B
 constant JE		: STD_LOGIC_VECTOR (7 downto 0):="10111010"; -- BA (JUMP se igual) -> B
 constant SW_A	: STD_LOGIC_VECTOR (7 downto 0):="11000001"; -- C1 (Load Switch) -> A
-constant PRINT	: STD_LOGIC_VECTOR (7 downto 0):="11110000"; -- F0 (Imprime String da memória)
+constant PRINT	: STD_LOGIC_VECTOR (7 downto 0):="11110000"; -- F0 (Imprime String da memÃ³ria)
 constant LIMPA	: STD_LOGIC_VECTOR (7 downto 0):="11110001"; -- F1 (Limpa mensagem)
 constant CPASS	: STD_LOGIC_VECTOR (7 downto 0):="11110010"; -- F2 (Compara Senha)
 
@@ -64,7 +64,7 @@ return STD_LOGIC_VECTOR is
 			when "1101" => tmp := X"44"; -- D
 			when "1110" =>	tmp := X"45"; -- E
 			when "1111" =>	tmp := X"46"; -- F
-			when others =>	tmp := X"20"; -- espaço
+			when others =>	tmp := X"20"; -- espaÃ§o
 		end case;
 	return tmp;
 end Hexcod;
