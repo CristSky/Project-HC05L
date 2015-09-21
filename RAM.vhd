@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Laboratório de Arquitetura de Computadores
--- Prof. Dr. Fábio Dacêncio Pereira
+-- LaboratÃ³rio de Arquitetura de Computadores
+-- Prof. Dr. FÃ¡bio DacÃªncio Pereira
 --
 -- Projeto Final P.O.
 --
--- César Torralvo Alves	RA - 533122
--- Cristiano Vicente		RA - 443913
+-- CÃ©sar Torralvo Alves
+-- Cristiano Vicente
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -23,9 +23,9 @@ entity RAM is
 end RAM;
 
 architecture Behavioral of RAM is
--- constants das instruções estão no pacote func
+-- constants das instruÃ§Ãµes estÃ£o no pacote func
 
--- Declaração da matriz da Memória RAM de 8x8 (255 -> 2^8)
+-- DeclaraÃ§Ã£o da matriz da MemÃ³ria RAM de 8x8 (255 -> 2^8)
 type ram_type is array (0 to 255) of STD_LOGIC_VECTOR (7 downto 0);
 signal ram : ram_type := (others => "00000000");
 
