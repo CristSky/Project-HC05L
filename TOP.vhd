@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- LaboratÛrio de Arquitetura de Computadores
--- Prof. Dr. F·bio DacÍncio Pereira
+-- Laborat√≥rio de Arquitetura de Computadores
+-- Prof. Dr. F√°bio Dac√™ncio Pereira
 --
 -- Projeto Final P.O.
 --
--- CÈsar Torralvo Alves	RA - 533122
--- Cristiano Vicente		RA - 443913
+-- C√©sar Torralvo Alves
+-- Cristiano Vicente
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -78,13 +78,13 @@ signal sclk : STD_LOGIC;
 
 
 begin
--- inst‚ncia do HC05 LITE ---------------------------
+-- inst√¢ncia do HC05 LITE ---------------------------
 proc_hc05 : HC05 port map (sclk,rst,sdin,srw,saddr,sdout,led,sline1,sline2,sw_e,sw);
 
--- inst‚ncia da RAM ---------------------------------
+-- inst√¢ncia da RAM ---------------------------------
 mem_ram : RAM port map (clk,rst,srw,sdin,saddr,sdout);
 
--- inst‚ncia do Display 16x2 ------------------------
+-- inst√¢ncia do Display 16x2 ------------------------
 Display_Out : LCD16x2_ctrl port map (clk,lcd_e,lcd_rs,lcd_rw,lcd_db,sline1,sline2);
 
 
