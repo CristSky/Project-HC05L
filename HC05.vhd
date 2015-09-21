@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------
--- Laboratório de Arquitetura de Computadores
--- Prof. Dr. Fábio Dacêncio Pereira
+-- LaboratÃ³rio de Arquitetura de Computadores
+-- Prof. Dr. FÃ¡bio DacÃªncio Pereira
 --
 -- Projeto Final P.O.
 --
--- César Torralvo Alves	RA - 533122
--- Cristiano Vicente		RA - 443913
+-- CÃ©sar Torralvo Alves
+-- Cristiano Vicente
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -28,7 +28,7 @@ entity HC05 is
 end HC05;
 
 architecture Behavioral of HC05 is
--- constants das instruções estão no pacote func
+-- constants das instruÃ§Ãµes estÃ£o no pacote func
 
 -- maquina de estados finita ------------------------------------------------------
 signal state : STD_LOGIC_VECTOR (2 downto 0) := "000";
@@ -46,7 +46,7 @@ signal X: STD_LOGIC_VECTOR (7 downto 0);
 signal PC: STD_LOGIC_VECTOR (7 downto 0);
 
 signal opcode : STD_LOGIC_VECTOR (7 downto 0);
-signal fase : STD_LOGIC_VECTOR (1 downto 0); -- Fase de operaçao decode
+signal fase : STD_LOGIC_VECTOR (1 downto 0); -- Fase de operaÃ§ao decode
 signal regaux : STD_LOGIC_VECTOR (7 downto 0); -- Auxiliar do PC
 
 
@@ -64,8 +64,8 @@ signal blink : std_logic := '0';
 
 begin
 
-addr <= PC; -- Barramento de Dados addr para comunicação com a RAM
-				-- Sempre que PC for atualizado, o addr também será
+addr <= PC; -- Barramento de Dados addr para comunicaÃ§Ã£o com a RAM
+				-- Sempre que PC for atualizado, o addr tambÃ©m serÃ¡
 
 led(6 downto 1) <= sw; -- Led para representar os switchs ligados
 
@@ -136,7 +136,7 @@ process(clk,rst)
 					opcode <= dout;
 					state <= DECODE;			
 				when DECODE =>
-				--- Instruções ------------------------------------------------------------------
+				--- InstruÃ§Ãµes ------------------------------------------------------------------
 					display_msg <= opcode;
 					case opcode is
 						-- 4C (INC) -> A --------------------------------------
@@ -218,7 +218,7 @@ process(clk,rst)
 									fase <= "01";
 								-- fase 1 ----------------
 								when "01" =>
-									PC <= dout; -- PC recebe posiçao da memória
+									PC <= dout; -- PC recebe posiÃ§ao da memÃ³ria
 									fase <= "10";
 								-- fase 2 ----------------
 								when "10" =>
@@ -240,7 +240,7 @@ process(clk,rst)
 									fase <= "01";
 								-- fase 1 ----------------
 								when "01" =>
-									PC <= dout; -- PC recebe posiçao da memória
+									PC <= dout; -- PC recebe posiÃ§ao da memÃ³ria
 									fase <= "10";
 								-- fase 2 ----------------
 								when "10" =>
@@ -262,7 +262,7 @@ process(clk,rst)
 									fase <= "01";
 								-- fase 1 ----------------
 								when "01" =>
-									PC <= dout; -- PC recebe posiçao da memória
+									PC <= dout; -- PC recebe posiÃ§ao da memÃ³ria
 									din <= A;
 									fase <= "10";
 								-- fase 2 ----------------
@@ -360,7 +360,7 @@ process(clk,rst)
 									state <= EXECUTA;
 								end if;
 							end if;
-						-- F0 (Imprime string da memória) ---------------------
+						-- F0 (Imprime string da memÃ³ria) ---------------------
 						when PRINT =>
 							case fase is
 								-- fase 0 ----------------
@@ -370,7 +370,7 @@ process(clk,rst)
 									fase <= "01";
 								-- fase 1 ----------------
 								when "01" =>
-									PC <= dout; -- PC recebe posiçao da memória
+									PC <= dout; -- PC recebe posiÃ§ao da memÃ³ria
 									fase <= "10";
 								-- fase 2 ----------------
 								when "10" =>
@@ -428,9 +428,9 @@ process(clk,rst)
 					end case;
 					
 					 
-				--- FIM Instruções --------------------------------------------------------------
+				--- FIM InstruÃ§Ãµes --------------------------------------------------------------
 				when EXECUTA =>
-					PC <= PC + 1; --aponta para proxima instruçao
+					PC <= PC + 1; --aponta para proxima instruÃ§ao
 					state <= BUSCA;
 					
 				when others => null;
